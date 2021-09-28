@@ -100,11 +100,9 @@ window.onload = function () {
         enterGame()
     };
     console.log(lobbyURLIP);
-    $.get("http://35.85.34.29:9001/getIp", {
-        sip: lobbyURLIP
-    }, function (a) {
+    $.getJson("http://35.85.34.29:9001/getIp", {}, function (a) {
         port = a.port;
-	    a.hostname = "35.85.34.29"
+	a.hostname = "35.85.34.29"
         newsocket || (newsocket = new WebSocket(`${a.protocol}://${a.hostname}:${a.port}`), setupNewSocket())
     })
 }
