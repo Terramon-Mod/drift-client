@@ -1,3 +1,8 @@
+/// Force http
+if (location.protocol !== "http:") {
+  location.protocol = "http:";
+}
+
 var targetFPS = 60, delta, delta2, currentTime, oldTime = 0, gameState = 0, gameOver = !1, newsocket, socket, port;
 Number.prototype.round = function (a) {
     return +this.toFixed(a)
